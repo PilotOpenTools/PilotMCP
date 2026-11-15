@@ -365,3 +365,6 @@ FodyWeavers.xsd
 # Документация (docfx): сайт и сгенерированный справочник инструментов
 _site/
 docs/tools/
+
+# Свои данные стенда для интеграционных тестов
+PilotMCP.Tests/test.local.runsettings
