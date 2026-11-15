@@ -6,6 +6,8 @@
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
     <RunSettingsFilePath>$(MSBuildProjectDirectory)\test.runsettings</RunSettingsFilePath>
+    <!-- Свои данные стенда: test.local.runsettings (в .gitignore), имеет приоритет над шаблоном -->
+    <RunSettingsFilePath Condition="Exists('$(MSBuildProjectDirectory)\test.local.runsettings')">$(MSBuildProjectDirectory)\test.local.runsettings</RunSettingsFilePath>
   </PropertyGroup>
 
   <ItemGroup>
