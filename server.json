@@ -1,16 +1,16 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.mahach666/pilotmcp",
+  "name": "io.github.PilotOpenTools/pilotmcp",
   "description": "MCP server for ASCON Pilot-ICE PDM: objects, documents, remarks, search, admin",
   "version": "0.0.0",
   "repository": {
-    "url": "https://github.com/mahach666/PilotMCP",
+    "url": "https://github.com/PilotOpenTools/PilotMCP",
     "source": "github"
   },
   "packages": [
     {
       "registryType": "mcpb",
-      "identifier": "https://github.com/mahach666/PilotMCP/releases/download/v0.0.0/PilotMCP-v0.0.0-win-x64.mcpb",
+      "identifier": "https://github.com/PilotOpenTools/PilotMCP/releases/download/v0.0.0/PilotMCP-v0.0.0-win-x64.mcpb",
       "version": "0.0.0",
       "fileSha256": "0000000000000000000000000000000000000000000000000000000000000000",
       "transport": {

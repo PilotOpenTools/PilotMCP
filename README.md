@@ -2,7 +2,7 @@
 
 MCP-сервер для работы с Pilot через Server API. Позволяет LLM-агентам подключаться к серверу Pilot, выполнять поиск, создавать и изменять объекты, работать с документами, историей изменений, правами доступа и чатами.
 
-Документация: https://mahach666.github.io/PilotMCP/ · DeepWiki: https://deepwiki.com/mahach666/PilotMCP
+Документация: https://pilotopentools.github.io/PilotMCP/ · DeepWiki: https://deepwiki.com/PilotOpenTools/PilotMCP
 
 ## Требования
 
@@ -11,9 +11,9 @@ MCP-сервер для работы с Pilot через Server API. Позво�
 
 ## Установка
 
-Подробнее об установке и настройке клиентов — в [документации](https://mahach666.github.io/PilotMCP/getting-started.html).
+Подробнее об установке и настройке клиентов — в [документации](https://pilotopentools.github.io/PilotMCP/getting-started.html).
 
-Готовые сборки (Windows x64) — на странице [Releases](https://github.com/mahach666/PilotMCP/releases):
+Готовые сборки (Windows x64) — на странице [Releases](https://github.com/PilotOpenTools/PilotMCP/releases):
 
 | Файл | Для чего |
 | ---- | -------- |
@@ -21,7 +21,7 @@ MCP-сервер для работы с Pilot через Server API. Позво�
 | `PilotMCP-vX.Y.Z-win-x64-selfcontained.zip` | Распаковать и указать `PilotMCP.exe` в конфигурации клиента; .NET не нужен |
 | `PilotMCP-vX.Y.Z-win-x64.zip` | То же, но нужен установленный .NET 8 Runtime |
 
-Сервер также опубликован в официальном [MCP Registry](https://registry.modelcontextprotocol.io) под именем `io.github.mahach666/pilotmcp`.
+Сервер также опубликован в официальном [MCP Registry](https://registry.modelcontextprotocol.io) под именем `io.github.PilotOpenTools/pilotmcp`.
 
 ### Выпуск релиза
 

@@ -10,9 +10,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mahach666/PilotMCP"
+    "url": "https://github.com/PilotOpenTools/PilotMCP"
   },
-  "homepage": "https://github.com/mahach666/PilotMCP",
+  "homepage": "https://github.com/PilotOpenTools/PilotMCP",
   "license": "Apache-2.0",
   "server": {
     "type": "binary",
