@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  Шаблон параметров интеграционных тестов (нужен живой сервер Pilot).
+  Свои данные сюда не вписывайте: скопируйте файл в test.local.runsettings (он в .gitignore и подхватывается
+  автоматически вместо этого шаблона) и заполните там.
+-->
 <RunSettings>
   <RunConfiguration>
     <EnvironmentVariables>
-      <PILOT_SERVER_URL>http://mahach-lt:5545</PILOT_SERVER_URL>
-      <PILOT_LOGIN>mcp</PILOT_LOGIN>
-      <PILOT_PASSWORD>mcp</PILOT_PASSWORD>
-      <PILOT_DATABASE>pilot-ice_ru</PILOT_DATABASE>
-      <PILOT_LICENSE_TYPE>103</PILOT_LICENSE_TYPE>
-      <PILOT_ADMIN_LOGIN>root</PILOT_ADMIN_LOGIN>
-      <PILOT_ADMIN_PASSWORD>root</PILOT_ADMIN_PASSWORD>
+      <PILOT_SERVER_URL>http://localhost:5545</PILOT_SERVER_URL>
+      <PILOT_LOGIN></PILOT_LOGIN>
+      <PILOT_PASSWORD></PILOT_PASSWORD>
+      <PILOT_DATABASE></PILOT_DATABASE>
+      <PILOT_LICENSE_TYPE>100</PILOT_LICENSE_TYPE>
+      <!-- Учётная запись администратора нужна только тестам, которые её требуют; пусто - они пропускаются -->
+      <PILOT_ADMIN_LOGIN></PILOT_ADMIN_LOGIN>
+      <PILOT_ADMIN_PASSWORD></PILOT_ADMIN_PASSWORD>
     </EnvironmentVariables>
   </RunConfiguration>
 </RunSettings>
