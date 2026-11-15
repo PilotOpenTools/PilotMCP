@@ -397,7 +397,7 @@ dotnet build -c Release
 | `PilotMCP-v<версия>-win-x64-selfcontained.zip` | ~75 МБ | ничего, .NET внутри               |
 | `PilotMCP-v<версия>-win-x64.zip`               | ~43 МБ | установленный .NET 8 Runtime      |
 
-В каждом архиве — `PilotMCP.exe` со всеми зависимостями, папка `ReportSamples`, `README.md` и `LICENSE.txt`. Отладочные символы (`.pdb`) исключены.
+В каждом архиве — `PilotMCP.exe` со всеми зависимостями, папка `ReportSamples`, `README.md` и `LICENSE`. Отладочные символы (`.pdb`) исключены.
 
 Версия берётся из `<Version>` в `PilotMCP.csproj`, платформа — из свойства `ReleaseRid` там же.
 
@@ -415,8 +415,8 @@ dotnet build -c Release -p:SkipReleasePackaging=true
 
 ### Лицензия
 
-Проект распространяется по лицензии Apache 2.0. Подробности см. в `LICENSE.txt`.
+Проект распространяется по лицензии [Apache 2.0](LICENSE).
 
-### Обратная связь и вклад
+### Участие
 
-Issues и PR приветствуются. Перед отправкой PR убедитесь, что проект собирается.
+Issues и PR приветствуются. Перед отправкой PR убедитесь, что проект собирается. Правила участия: [CONTRIBUTING](https://github.com/PilotOpenTools/.github/blob/main/CONTRIBUTING.md). Кодекс поведения: [CODE_OF_CONDUCT](https://github.com/PilotOpenTools/.github/blob/main/CODE_OF_CONDUCT.md).
