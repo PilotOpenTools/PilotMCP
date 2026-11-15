@@ -28,13 +28,13 @@ MCP-сервер для работы с Pilot через Server API. Позво�
 Релиз собирается GitHub Actions по тегу вида `vX.Y.Z` (semver, допускается суффикс `-beta.1`):
 
 ```
-git tag v0.1.0
-git push origin v0.1.0
+git tag vX.Y.Z
+git push origin vX.Y.Z
 ```
 
-Workflow [`release.yml`](.github/workflows/release.yml) прогоняет unit-тесты, собирает zip-архивы и `.mcpb`, создаёт GitHub Release и публикует [`server.json`](server.json) в MCP Registry (вход по OIDC, секреты не нужны). Версия берётся из тега. Манифест бандла — [`mcpb/manifest.json`](mcpb/manifest.json).
+Workflow [`release.yml`](.github/workflows/release.yml) прогоняет unit-тесты, собирает zip-архивы и `.mcpb`, создаёт GitHub Release и публикует [`server.json`](server.json) в MCP Registry (вход по OIDC, секреты не нужны). Версия берётся из тега. Манифест бандла — [`mcpb/manifest.json`](mcpb/manifest.json). Вместо `vX.Y.Z` подставьте новую версию, которой ещё нет среди тегов. `CHANGELOG` в репозитории не ведётся: описание релиза GitHub создаёт автоматически (`--generate-notes`). Подробности, включая ограничения `release.yml`, — в [docs/development.md](docs/development.md).
 
-На каждый push и pull request [`ci.yml`](.github/workflows/ci.yml) собирает проект и прогоняет unit-тесты. Интеграционные тесты (`Category=Integration`) требуют живой сервер Pilot и запускаются локально: `dotnet test PilotMCP.slnx` с параметрами из `PilotMCP.Tests/test.runsettings`.
+На push в любую ветку и на pull request [`ci.yml`](.github/workflows/ci.yml) собирает проект и прогоняет unit-тесты (на ветке с открытым PR он запускается дважды). Интеграционные тесты (`Category=Integration`) требуют живой сервер Pilot и запускаются локально: `dotnet test PilotMCP.slnx` с параметрами из `PilotMCP.Tests/test.runsettings` (файл содержит значения тестового стенда автора, для своего сервера замените их локально).
 
 
 ## Подключение к MCP-клиенту
