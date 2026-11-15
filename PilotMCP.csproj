@@ -67,12 +67,16 @@
     <ItemGroup>
       <!-- Отладочные символы в релизе не нужны: один только libSkiaSharp.pdb — 80 МБ -->
       <ReleaseStagePdb Include="$(ReleaseStageRoot)\**\*.pdb" />
-      <ReleaseDoc Include="$(MSBuildProjectDirectory)\README.md;$(MSBuildProjectDirectory)\LICENSE" />
+      <ReleaseDoc Include="$(MSBuildProjectDirectory)\README.md;$(MSBuildProjectDirectory)\LICENSE;$(MSBuildProjectDirectory)\THIRD-PARTY-NOTICES.md" />
+      <!-- Тексты лицензий сторонних компонентов (AGPL-3.0 для MuPDFCore, MIT) -->
+      <ReleaseLicenseText Include="$(MSBuildProjectDirectory)\licenses\*.txt" />
     </ItemGroup>
 
     <Delete Files="@(ReleaseStagePdb)" />
     <Copy SourceFiles="@(ReleaseDoc)" DestinationFolder="$(FrameworkStageDir)" />
     <Copy SourceFiles="@(ReleaseDoc)" DestinationFolder="$(SelfContainedStageDir)" />
+    <Copy SourceFiles="@(ReleaseLicenseText)" DestinationFolder="$(FrameworkStageDir)\licenses" />
+    <Copy SourceFiles="@(ReleaseLicenseText)" DestinationFolder="$(SelfContainedStageDir)\licenses" />
 
     <ZipDirectory SourceDirectory="$(FrameworkStageDir)" DestinationFile="$(FrameworkZip)" Overwrite="true" />
     <ZipDirectory SourceDirectory="$(SelfContainedStageDir)" DestinationFile="$(SelfContainedZip)" Overwrite="true" />

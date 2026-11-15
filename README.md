@@ -28,13 +28,13 @@ MCP-сервер для работы с Pilot через Server API. Позво�
 Релиз собирается GitHub Actions по тегу вида `vX.Y.Z` (semver, допускается суффикс `-beta.1`):
 
 ```
-git tag v0.1.0
-git push origin v0.1.0
+git tag vX.Y.Z
+git push origin vX.Y.Z
 ```
 
-Workflow [`release.yml`](.github/workflows/release.yml) прогоняет unit-тесты, собирает zip-архивы и `.mcpb`, создаёт GitHub Release и публикует [`server.json`](server.json) в MCP Registry (вход по OIDC, секреты не нужны). Версия берётся из тега. Манифест бандла — [`mcpb/manifest.json`](mcpb/manifest.json).
+Workflow [`release.yml`](.github/workflows/release.yml) прогоняет unit-тесты, собирает zip-архивы и `.mcpb`, создаёт GitHub Release и публикует [`server.json`](server.json) в MCP Registry (вход по OIDC, секреты не нужны). Версия берётся из тега. Манифест бандла — [`mcpb/manifest.json`](mcpb/manifest.json). Вместо `vX.Y.Z` подставьте новую версию, которой ещё нет среди тегов. `CHANGELOG` в репозитории не ведётся: описание релиза GitHub создаёт автоматически (`--generate-notes`). Подробности, включая ограничения `release.yml`, — в [docs/development.md](docs/development.md).
 
-На каждый push и pull request [`ci.yml`](.github/workflows/ci.yml) собирает проект и прогоняет unit-тесты. Интеграционные тесты (`Category=Integration`) требуют живой сервер Pilot и запускаются локально: `dotnet test PilotMCP.slnx` с параметрами из `PilotMCP.Tests/test.runsettings`.
+На push в любую ветку и на pull request [`ci.yml`](.github/workflows/ci.yml) собирает проект и прогоняет unit-тесты (на ветке с открытым PR он запускается дважды). Интеграционные тесты (`Category=Integration`) требуют живой сервер Pilot и запускаются локально: `dotnet test PilotMCP.slnx` с параметрами своего сервера: скопируйте шаблон `PilotMCP.Tests/test.runsettings` в `PilotMCP.Tests/test.local.runsettings` (он в `.gitignore`, подхватывается автоматически) и заполните.
 
 
 ## Подключение к MCP-клиенту
@@ -379,11 +379,6 @@ ExportCsv("tmp/filter_x.jsonl", "C:/result/docs.csv", "name,typeName,created")
 
 ---
 
-### Тесты
-
-Сервер тестировался в Pilot 26.1.
-Для тестирования использовалась локальная LLM Qwen3.5 27B (Контекст 200к токенов)
-
 ### Сборка релиза
 
 ```bash
@@ -397,7 +392,7 @@ dotnet build -c Release
 | `PilotMCP-v<версия>-win-x64-selfcontained.zip` | ~75 МБ | ничего, .NET внутри               |
 | `PilotMCP-v<версия>-win-x64.zip`               | ~43 МБ | установленный .NET 8 Runtime      |
 
-В каждом архиве — `PilotMCP.exe` со всеми зависимостями, папка `ReportSamples`, `README.md` и `LICENSE`. Отладочные символы (`.pdb`) исключены.
+В каждом архиве — `PilotMCP.exe` со всеми зависимостями, папка `ReportSamples`, `README.md`, `LICENSE`, `THIRD-PARTY-NOTICES.md` и папка `licenses` с текстами лицензий сторонних компонентов. Отладочные символы (`.pdb`) исключены.
 
 Версия берётся из `<Version>` в `PilotMCP.csproj`, платформа — из свойства `ReleaseRid` там же.
 
@@ -415,7 +410,7 @@ dotnet build -c Release -p:SkipReleasePackaging=true
 
 ### Лицензия
 
-Проект распространяется по лицензии [Apache 2.0](LICENSE).
+Проект распространяется по лицензии [Apache 2.0](LICENSE). В релизные архивы входят сторонние библиотеки на своих условиях, в том числе MuPDFCore под AGPL-3.0: см. [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
 
 ### Участие
 
