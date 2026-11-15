@@ -7,7 +7,7 @@
 
 ## Установка
 
-Готовые сборки (Windows x64) лежат на странице [Releases](https://github.com/mahach666/PilotMCP/releases):
+Готовые сборки (Windows x64) лежат на странице [Releases](https://github.com/PilotOpenTools/PilotMCP/releases):
 
 | Файл | Для чего |
 | ---- | -------- |
@@ -28,7 +28,7 @@
 
 ### MCP Registry
 
-Сервер опубликован в официальном [MCP Registry](https://registry.modelcontextprotocol.io) под именем `io.github.mahach666/pilotmcp`.
+Сервер опубликован в официальном [MCP Registry](https://registry.modelcontextprotocol.io) под именем `io.github.PilotOpenTools/pilotmcp`.
 
 ## Подключение к MCP-клиенту
 
