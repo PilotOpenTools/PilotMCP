@@ -67,7 +67,7 @@
     <ItemGroup>
       <!-- Отладочные символы в релизе не нужны: один только libSkiaSharp.pdb — 80 МБ -->
       <ReleaseStagePdb Include="$(ReleaseStageRoot)\**\*.pdb" />
-      <ReleaseDoc Include="$(MSBuildProjectDirectory)\README.md;$(MSBuildProjectDirectory)\LICENSE.txt" />
+      <ReleaseDoc Include="$(MSBuildProjectDirectory)\README.md;$(MSBuildProjectDirectory)\LICENSE" />
     </ItemGroup>
 
     <Delete Files="@(ReleaseStagePdb)" />
